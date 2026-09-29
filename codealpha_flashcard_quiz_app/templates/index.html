@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flashcard Quiz App</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <p class="eyebrow">
+                    CodeAlpha Internship • Task 1
+                </p>
+
+                <h1>Flashcard Quiz App</h1>
+
+                <p class="subtitle">
+                    Learn, practice, and test your knowledge.
+                </p>
+            </div>
+
+            <button id="addBtn" class="primary-btn">
+                + Add Flashcard
+            </button>
+
+        </header>
+
+
+        <!-- MODE BUTTONS -->
+        <div class="mode-buttons">
+
+            <button id="studyModeBtn"
+                    class="mode-btn active">
+                📚 Study Mode
+            </button>
+
+            <button id="quizModeBtn"
+                    class="mode-btn">
+                🎯 Quiz Mode
+            </button>
+
+        </div>
+
+
+        <!-- ================= STUDY MODE ================= -->
+
+        <section id="studyMode"
+                 class="study-card">
+
+            <div class="card-top">
+
+                <span id="cardNumber">
+                    Card 0 of 0
+                </span>
+
+                <div class="card-actions">
+
+                    <button id="editBtn"
+                            class="small-btn"
+                            disabled>
+                        ✏️ Edit
+                    </button>
+
+                    <button id="deleteBtn"
+                            class="small-btn danger"
+                            disabled>
+                        🗑️ Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="flashcard"
+                 class="flashcard empty">
+
+                <div class="card-face">
+
+                    <span id="label"
+                          class="card-label">
+                        QUESTION
+                    </span>
+
+                    <h2 id="question">
+                        No flashcards yet
+                    </h2>
+
+                    <p id="answer"
+                       class="answer hidden">
+                    </p>
+
+                    <button id="showAnswerBtn"
+                            class="secondary-btn"
+                            disabled>
+                        Show Answer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="navigation">
+
+                <button id="prevBtn"
+                        class="nav-btn"
+                        disabled>
+                    ← Previous
+                </button>
+
+                <button id="nextBtn"
+                        class="nav-btn"
+                        disabled>
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ MODE ================= -->
+
+        <section id="quizMode"
+                 class="study-card hidden">
+
+            <div class="quiz-header">
+
+                <span id="quizNumber">
+                    Question 0 of 0
+                </span>
+
+                <span id="score">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <!-- QUIZ QUESTION -->
+
+            <div class="quiz-question">
+
+                <span class="card-label">
+                    QUESTION
+                </span>
+
+                <h2 id="quizQuestion">
+                    Quiz is ready!
+                </h2>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div id="quizOptions"
+                 class="quiz-options">
+
+                <!-- JavaScript will add options here -->
+
+            </div>
+
+
+            <!-- QUIZ MESSAGE -->
+
+            <p id="quizMessage"
+               class="quiz-message">
+            </p>
+
+
+            <!-- QUIZ BUTTONS -->
+
+            <div class="quiz-actions">
+
+                <button id="checkAnswerBtn"
+                        class="primary-btn">
+                    Check Answer
+                </button>
+
+                <button id="nextQuestionBtn"
+                        class="nav-btn hidden">
+                    Next Question →
+                </button>
+
+            </div>
+
+
+            <!-- FINAL RESULT -->
+
+            <div id="quizResult"
+                 class="quiz-result hidden">
+
+                <h2>🎉 Quiz Completed!</h2>
+
+                <p>
+                    Your Final Score
+                </p>
+
+                <div id="finalScore"
+                     class="final-score">
+                    0 / 0
+                </div>
+
+                <button id="restartQuizBtn"
+                        class="primary-btn">
+                    🔄 Restart Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+
+        <p id="message"
+           class="message"
+           aria-live="polite">
+        </p>
+
+    </main>
+
+
+    <!-- ================= ADD / EDIT MODAL ================= -->
+
+    <div id="modal"
+         class="modal hidden">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Add Flashcard
+                </h2>
+
+                <button id="closeModal"
+                        class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="flashcardForm">
+
+                <label for="questionInput">
+                    Question
+                </label>
+
+                <textarea id="questionInput"
+                          rows="4"
+                          required
+                          placeholder="Enter your question...">
+                </textarea>
+
+
+                <label for="answerInput">
+                    Answer
+                </label>
+
+                <textarea id="answerInput"
+                          rows="5"
+                          required
+                          placeholder="Enter the answer...">
+                </textarea>
+
+
+                <div class="form-actions">
+
+                    <button type="button"
+                            id="cancelBtn"
+                            class="secondary-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                            class="primary-btn">
+                        Save Flashcard
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
