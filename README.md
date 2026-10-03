@@ -1,20 +1,36 @@
-# Random Quote Generator
+# Fitness Tracker App
 
-Internship Task 2
+Internship Task 3
 
 ## Features
-- Displays a random quote when the app opens.
-- New Quote button generates a different quote.
-- Shows quote text and author clearly.
-- Clean and responsive minimal UI.
-- Works without any backend or external API.
+- Track daily steps, workout duration and calories.
+- Add fitness activities manually.
+- Dashboard with daily totals.
+- Progress bars for daily goals.
+- Recent activity log.
+- Delete individual activities.
+- Clear today's activities.
+- Data is stored in browser Local Storage.
+- Responsive and clean UI.
 
 ## How to Run
-1. Open the project folder.
-2. Double-click `index.html`.
-3. Click `New Quote` to display another quote.
+1. Extract the ZIP file.
+2. Open the `Fitness-Tracker-App` folder.
+3. Double-click `index.html`.
+
+Optional:
+Run a local server from the folder:
+`python -m http.server 8000`
+Then open:
+`http://localhost:8000`
 
 ## Technologies
 - HTML5
 - CSS3
 - JavaScript
+- Browser Local Storage
+
+## Daily Goals
+- Steps: 10,000
+- Calories: 2,000 kcal
+- Workout: 60 minutes
