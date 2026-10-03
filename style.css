@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+    padding: 20px;
+}
+
+.quote-container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.quote-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 45px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.quote-mark {
+    font-size: 70px;
+    line-height: 0.8;
+    color: #111827;
+    font-family: Georgia, serif;
+}
+
+.quote-text {
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.author {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.author::before {
+    content: "— ";
+}
+
+button {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .quote-card {
+        padding: 35px 25px;
+    }
+
+    .quote-text {
+        font-size: 22px;
+    }
+
+    .quote-mark {
+        font-size: 55px;
+    }
+}
